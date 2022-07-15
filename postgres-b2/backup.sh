@@ -10,7 +10,7 @@ set -eu
 
 # https://www.postgresql.org/docs/current/libpq-envars.html
 echo "[$(date '+%Y/%m/%d %H:%M:%S')] Dumping..."
-pg_dump $POSTGRES_ARGS >"/tmp/postgres.dump"
+pg_dumpall $POSTGRES_ARGS --no-comments > "/tmp/postgres.dump"
 
 # b2 authorize-account [-h]  [applicationKeyId] [applicationKey]
 echo "[$(date '+%Y/%m/%d %H:%M:%S')] Logging in..."
